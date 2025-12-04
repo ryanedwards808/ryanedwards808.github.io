@@ -159,8 +159,12 @@
     </section>
 
     <footer class="wrap">
-  <p>© <script>document.write(new Date().getFullYear())</script>
+  <p>© <span id="year"></span> 
     <a href="https://ryanedwards.bio" target="_blank" rel="noopener">Ryan Edwards</a>.
     All rights reserved.
   </p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
