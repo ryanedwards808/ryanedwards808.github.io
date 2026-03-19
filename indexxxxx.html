@@ -152,11 +152,22 @@
     }
 
     .grid { display: grid; gap: 28px; }
-    .grid.work { grid-template-columns: 1fr; }
 
-    @media (min-width: 800px){
-      .grid.work { grid-template-columns: 1fr 1fr; }
-    }
+.grid.work {
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 800px){
+  .grid.work { 
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.card.role {
+  align-self: start;
+}
 
     .role { display: grid; gap: 6px; }
     .meta { color: var(--muted); font-size: 14px; }
