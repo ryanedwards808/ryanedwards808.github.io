@@ -27,6 +27,7 @@
       --radius: 16px;
       --shadow: 0 8px 24px rgba(0,0,0,.08);
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #0b0f17;
@@ -46,12 +47,16 @@
       margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
 
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 32px 20px 80px; }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
 
     header.site {
       position: sticky;
@@ -71,10 +76,18 @@
       gap: 16px;
     }
 
-    a { color: var(--accent); text-decoration: none; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     a:hover { text-decoration: underline; }
 
-    .brand { font-weight: 700; letter-spacing: .2px; }
+    .brand {
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
     .spacer { flex: 1; }
 
     .btn-print {
@@ -85,51 +98,92 @@
       border-radius: 999px;
       cursor: pointer;
       box-shadow: var(--shadow);
+      font: inherit;
     }
 
     .btn-print:hover { filter: brightness(1.05); }
 
-    h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 8px 0 12px; }
-    h2 { font-size: clamp(20px, 3vw, 26px); margin: 28px 0 12px; }
-    h3 { font-size: 18px; margin: 0 0 6px; }
+    h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.1;
+      margin: 0 0 12px;
+      letter-spacing: -.02em;
+    }
+
+    h2 {
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.15;
+      margin: 0 0 14px;
+      letter-spacing: -.02em;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.25;
+      margin: 0 0 6px;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
 
     p.lead {
       color: var(--muted);
       font-size: 18px;
-      margin: 0 0 24px;
+      margin: 0 0 20px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
     }
 
     .hero {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
-      align-items: center;
-      margin-bottom: 28px;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 40px;
     }
 
     @media (min-width: 800px) {
       .hero {
-        grid-template-columns: 1.4fr 0.8fr;
+        grid-template-columns: 1.5fr 0.9fr;
       }
     }
 
     .hero-copy {
       min-width: 0;
-    <div style="font-weight:600; letter-spacing:.4px; margin-bottom:6px;">
-  Ryan Edwards
-</div>}
+    }
+
+    .hero-name {
+      font-weight: 600;
+      letter-spacing: .02em;
+      margin-bottom: 8px;
+      color: var(--fg);
+    }
 
     .hero-headshot {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 800px) {
+      .hero-headshot {
+        justify-content: flex-end;
+      }
     }
 
     .headshot-frame {
       width: 100%;
-      max-width: 280px;
-      aspect-ratio: 4 / 5;
-      border-radius: 20px;
+      max-width: 320px;
+      aspect-ratio: 3 / 4;
+      border-radius: 22px;
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--card);
@@ -150,111 +204,148 @@
       padding: 20px;
       box-shadow: var(--shadow);
     }
-.grid { display: grid; gap: 28px; }
 
-.timeline {
-  position: relative;
-  display: grid;
-  gap: 22px;
-  margin-top: 8px;
-}
+    .section {
+      margin-bottom: 28px;
+    }
 
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 15px;
-  top: 58px;
-  bottom: 8px;
-  width: 1px;
-  background: var(--border);
-}
-
-.timeline-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: 32px 1fr;
-  gap: 18px;
-  align-items: start;
-}
-
-.timeline-marker {
-  position: relative;
-  width: 32px;
-  min-height: 100%;
-}
-
-.timeline-marker::before {
-  content: "";
-  position: absolute;
-  top: 26px;
-  left: 8px;
-  width: 14px;
-  height: 14px;
-  border-radius: 999px;
-  background: var(--bg);
-  border: 2px solid var(--accent);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--card) 80%, transparent);
-}
-
-.timeline-card {
-  padding: 20px 22px;
-}
-
-.timeline-card h3 {
-  margin-bottom: 4px;
-}
-
-.timeline-card .meta {
-  margin-bottom: 10px;
-}
-
-@media (min-width: 800px) {
-  .timeline {
-    gap: 26px;
-  }
-
-  .timeline::before {
-    left: 19px;
-  }
-
-  .timeline-item {
-    grid-template-columns: 40px 1fr;
-    gap: 22px;
-  }
-
-  .timeline-marker::before {
-    left: 10px;
-  }
-}
-
-@media (min-width: 800px){
-  .grid.work { 
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
-}
-
-.card.role {
-  align-self: start;
-}
-
-    .role { display: grid; gap: 6px; }
-    .meta { color: var(--muted); font-size: 14px; }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
     .desc strong:first-child {
       color: var(--accent);
       font-weight: 600;
     }
 
-    footer { margin-top: 28px; color: var(--muted); font-size: 14px; }
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 22px;
+      margin-top: 10px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 58px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .timeline-marker {
+      position: relative;
+      width: 32px;
+      min-height: 100%;
+    }
+
+    .timeline-marker::before {
+      content: "";
+      position: absolute;
+      top: 26px;
+      left: 8px;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--card) 80%, transparent);
+    }
+
+    .timeline-card {
+      padding: 20px 22px;
+    }
+
+    .timeline-card h3 {
+      margin-bottom: 4px;
+    }
+
+    .timeline-card .meta {
+      margin-bottom: 10px;
+    }
+
+    .timeline-intro {
+      max-width: 720px;
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    .section-divider {
+      height: 1px;
+      margin: 34px 0 28px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--border) 18%,
+        var(--border) 82%,
+        transparent 100%
+      );
+    }
+
+    footer {
+      margin-top: 36px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (min-width: 800px) {
+      .timeline {
+        gap: 26px;
+      }
+
+      .timeline::before {
+        left: 19px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 40px 1fr;
+        gap: 22px;
+      }
+
+      .timeline-marker::before {
+        left: 10px;
+      }
+    }
 
     @media print {
-      header.site, .btn-print { display: none !important; }
-      body { background: #fff; color: #000; }
-      .card { box-shadow: none; }
-      .headshot-frame { box-shadow: none; }
-      a { color: #000; text-decoration: none; }
-      .wrap { padding: 0; }
+      header.site,
+      .btn-print {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .card,
+      .headshot-frame {
+        box-shadow: none;
+      }
+
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .wrap {
+        padding: 0;
+      }
+
+      .section-divider {
+        background: #ddd;
+      }
     }
   </style>
 </head>
@@ -268,97 +359,110 @@
   </header>
 
   <main class="wrap">
-    <section class="hero">
+    <section class="hero" aria-labelledby="intro-title">
       <div class="hero-copy">
-        <h2>Hi, I'm Ryan — I like to build things. From startups to relationships.</h2>
-        <p class="lead">I am an avid enthusiast of tech, venture, philosophy, music, and design. I live and operate in the SF Bay Area with my family who inspire me every day. I like to hike Mt Tam and talk shop with domain experts. <a href="mailto:hello@ryanedwards.bio">Get in touch</a>.</p>
+        <div class="eyebrow">Ryan Edwards</div>
+        <h1 id="intro-title">Builder across startups, hardware, venture, design, and technology.</h1>
+        <div class="hero-name">SF Bay Area</div>
+        <p class="lead">
+          I am an avid enthusiast of tech, venture, philosophy, music, and design. I live and operate in the SF Bay Area with my family, who inspire me every day. I like to hike Mt Tam and talk shop with domain experts.
+          <a href="mailto:hello@ryanedwards.bio">Get in touch</a>.
+        </p>
       </div>
 
       <div class="hero-headshot">
         <div class="headshot-frame">
-          <img
-            src="Ryan-Edwards-3.jpg"
-            alt="Headshot of Ryan Edwards"
-          />
+          <img src="images/ryan-headshot.jpg" alt="Headshot of Ryan Edwards" />
         </div>
       </div>
     </section>
 
-    <section class="card" id="background" aria-labelledby="background-h" style="margin-bottom:28px;">
+    <section class="card section" id="background" aria-labelledby="background-h">
       <h2 id="background-h">Background</h2>
-      <p>With a hacker mindset since childhood, I have spent nearly 40-years learning how things work by decompiling them. From synthesizers to computers to the internet. I built my first pre-internet BBS in my parents basement during a grey winter in Canada. As the internet hit I ran through all things cyber, from coding to community, infra to ecommerce.</p>
-
-      <p>Fast forward to the last decade and I have spent countless hours working with startups and leading teams of 50+ to bring design-led products and useful technologies into the world. From finance to brand, factory floor to board room, I have developed a unique set of chops to drive technology and innovation forward.</p>
+      <p>
+        With a hacker mindset since childhood, I have spent nearly 40 years learning how things work by decompiling them — from synthesizers to computers to the internet. I built my first pre-internet BBS in my parents’ basement during a grey winter in Canada. As the internet hit, I ran through all things cyber, from coding to community, infrastructure to ecommerce.
+      </p>
+      <p>
+        Fast forward to the last decade and I have spent countless hours working with startups and leading teams of 50+ to bring design-led products and useful technologies into the world. From finance to brand, factory floor to board room, I have developed a unique set of chops to drive technology and innovation forward.
+      </p>
     </section>
 
-    <section class="card" id="education" aria-labelledby="edu-h" style="margin-bottom:28px;">
-      <h2 id="edu-h">Education</h2>
-      <p><strong>University of Western Ontario</strong> BA Honors, Anthropology and Linguistics, 2001.</p>
+    <section class="section" id="work" aria-labelledby="work-h">
+      <h2 id="work-h">Experience</h2>
+      <p class="lead timeline-intro">
+        A through-line across venture, hardware, design, and operating roles — building products, companies, and systems with long-term leverage.
+      </p>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="card timeline-card">
+            <h3>Co-founder, CEO</h3>
+            <div class="meta">Stealth Startup · San Francisco, CA · 2026 – Present</div>
+            <p class="desc"><strong>AI / Cybersecurity.</strong> Startup with an elite team working on an important problem in the device security space.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="card timeline-card">
+            <h3>Board Member · Co-founder, President, CEO</h3>
+            <div class="meta">Happier Camper, Inc. · Los Angeles, CA · 2014 – Present</div>
+            <p class="desc"><strong>Mobility / Hardware.</strong> Built a towable vehicle manufacturer from the ground up with a group of brilliant designers and engineers. Led executive leadership, fundraising, finance, corporate development, governance, patents, brand, and strategy.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="card timeline-card">
+            <h3>Managing Partner</h3>
+            <div class="meta">Capture Design Ventures · San Francisco, CA · 2015 – Ongoing</div>
+            <p class="desc"><strong>Venture Investing.</strong> Syndicate management and angel investment in early-stage hardware, software, biotech, and consumer companies. Placing educated bets from a design-meets-finance perspective.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="card timeline-card">
+            <h3>Partner</h3>
+            <div class="meta">Indicate Design Groupe, Inc. · San Francisco, CA · 2012 – Ongoing</div>
+            <p class="desc"><strong>Design / Startup Incubation.</strong> Worked with countless startups to develop their business and market presence. Partnered with one of the top identity designers in the world. Selected overlap includes Uber, Expa, and Emulate Bio.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="card timeline-card">
+            <h3>VP, Product Management</h3>
+            <div class="meta">OCZ Technology, Inc. (Acquired by Toshiba) · Sunnyvale, CA · 2007 – 2011</div>
+            <p class="desc"><strong>Device Manufacturer.</strong> Developed and co-led manufacturing of various device and component lines, including SSD, power management, and cooling.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="card timeline-card">
+            <h3>Director, Product Management</h3>
+            <div class="meta">PC Power &amp; Cooling, Inc. · Carlsbad, CA · 2003 – 2007</div>
+            <p class="desc"><strong>Device Manufacturer.</strong> Cut my teeth in the hardware industry with the pioneer in aftermarket computer power supply and cooling devices.</p>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="timeline" id="work" aria-labelledby="work-h">
-  <h2 id="work-h">Experience</h2>
-      <p class="lead" style="font-size:16px; margin:0 0 8px; max-width:720px;">
-  A through-line across venture, hardware, design, and operating roles — building products, companies, and systems with long-term leverage.
-</p>
+    <div class="section-divider" aria-hidden="true"></div>
 
-  <article class="timeline-item">
-    <div class="timeline-marker" aria-hidden="true"></div>
-    <div class="card role timeline-card">
-      <h3>Co-founder, CEO</h3>
-      <div class="meta">Stealth Startup · San Francisco, CA · 2026 – Present</div>
-      <p class="desc"><strong>AI / Cybersecurity.</strong> Startup with an elite team working on an important problem in the device security space.</p>
-    </div>
-  </article>
+    <section class="card section" id="education" aria-labelledby="edu-h">
+      <h2 id="edu-h">Education &amp; Foundations</h2>
+      <p>
+        <strong>University of Western Ontario</strong><br />
+        2001 · BA Honors · Anthropology and Linguistics
+      </p>
+    </section>
 
-  <article class="timeline-item">
-    <div class="timeline-marker" aria-hidden="true"></div>
-    <div class="card role timeline-card">
-      <h3>Board Member · Co-founder, President, CEO</h3>
-      <div class="meta">Happier Camper, Inc. · Los Angeles, CA · 2014 – Present</div>
-      <p class="desc"><strong>Mobility / Hardware.</strong> Built towable vehicle manufacturer from ground up with a group of brilliant designers and engineers. Handled executive leadership, fundraising, finance, corporate dev, governance, patents, brand, and strategy.</p>
-    </div>
-  </article>
-
-  <article class="timeline-item">
-    <div class="timeline-marker" aria-hidden="true"></div>
-    <div class="card role timeline-card">
-      <h3>Partner</h3>
-      <div class="meta">Indicate Design Groupe, Inc. · San Francisco, CA · 2012 – Ongoing</div>
-      <p class="desc"><strong>Design / Startup Incubation.</strong> Worked with countless startups to develop their business and market presence. Partnered with one of the top identity designers in the world. (Uber, Expa, Emulate Bio)</p>
-    </div>
-  </article>
-
-  <article class="timeline-item">
-    <div class="timeline-marker" aria-hidden="true"></div>
-    <div class="card role timeline-card">
-      <h3>Managing Partner</h3>
-      <div class="meta">Capture Design Ventures · San Francisco, CA · 2015 – Ongoing</div>
-      <p class="desc"><strong>Venture Investing.</strong> Syndicate management and angel investment in early-stage hardware, software, bio-tech, and consumer companies. Placing educated bets from a design-meets-finance perspective.</p>
-    </div>
-  </article>
-
-  <article class="timeline-item">
-    <div class="timeline-marker" aria-hidden="true"></div>
-    <div class="card role timeline-card">
-      <h3>VP, Product Management</h3>
-      <div class="meta">OCZ Technology, Inc. (Acquired by Toshiba) · Sunnyvale, CA · 2007 – 2011</div>
-      <p class="desc"><strong>Device Manufacturer.</strong> Developed and co-led manufacturing of various device and component lines, including SSD, power management, and cooling.</p>
-    </div>
-  </article>
-
-  <article class="timeline-item">
-    <div class="timeline-marker" aria-hidden="true"></div>
-    <div class="card role timeline-card">
-      <h3>Director, Product Management</h3>
-      <div class="meta">PC Power &amp; Cooling, Inc. · Carlsbad, CA · 2003 – 2007</div>
-      <p class="desc"><strong>Device Manufacturer.</strong> Cut my teeth in the hardware industry with the pioneer in aftermarket computer power supply and cooling devices.</p>
-    </div>
-  </article>
-</section>
-
-    <footer class="wrap">
-      <p>© <span id="year"></span>
+    <footer>
+      <p>
+        © <span id="year"></span>
         <a href="https://ryanedwards.bio" target="_blank" rel="noopener">Ryan Edwards</a>.
         All rights reserved.
       </p>
