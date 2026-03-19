@@ -1,1 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ryan Edwards CV</title>
+  <meta name="description" content="Curriculum Vitae of Ryan Edwards — technology, venture, design, entrepreneurship." />
+  <meta property="og:title" content="Curriculum Vitae :: Ryan Edwards" />
+  <meta property="og:description" content="Builder across startup, technology, venture, hardware, and design in the SF Bay Area." />
+  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="light dark" />
+  <script>
+    if (location.protocol !== 'https:') {
+      location.replace('https://' + location.hostname + location.pathname + location.search);
+    }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000'/%3E%3Ctext x='50' y='62' font-size='56' text-anchor='middle' fill='%23fff' font-family='ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji'%3ERE%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0b1220;
+      --muted: #5b6371;
+      --card: #f6f8fb;
+      --accent: #0f62fe;
+      --border: #e5e7eb;
+      --maxw: 940px;
+      --radius: 16px;
+      --shadow: 0 8px 24px rgba(0,0,0,.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0f17;
+        --fg: #e6e9ef;
+        --muted: #a3adbf;
+        --card: #121826;
+        --accent: #7aa2ff;
+        --border: #1f2637;
+        --shadow: 0 8px 24px rgba(0,0,0,.4);
+      }
+    }
 
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 32px 20px 80px; }
+
+    header.site {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: saturate(180%) blur(8px);
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header.site .nav {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .brand { font-weight: 700; letter-spacing: .2px; }
+    .spacer { flex: 1; }
+
+    .btn-print {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--fg);
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-print:hover { filter: brightness(1.05); }
+
+    h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 8px 0 12px; }
+    h2 { font-size: clamp(20px, 3vw, 26px); margin: 28px 0 12px; }
+    h3 { font-size: 18px; margin: 0 0 6px; }
+
+    p.lead {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0 0 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: 800px) {
+      .hero {
+        grid-template-columns: 1.4fr 0.8fr;
+      }
+    }
+
+    .hero-copy {
+      min-width: 0;
+    <div style="font-weight:600; letter-spacing:.4px; margin-bottom:6px;">
+  Ryan Edwards
+</div>}
+
+    .hero-headshot {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .headshot-frame {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 4 / 5;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .headshot-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .grid { display: grid; gap: 28px; }
+
+.grid.work {
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 800px){
+  .grid.work { 
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.card.role {
+  align-self: start;
+}
+
+    .role { display: grid; gap: 6px; }
+    .meta { color: var(--muted); font-size: 14px; }
+
+    .desc strong:first-child {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    footer { margin-top: 28px; color: var(--muted); font-size: 14px; }
+
+    @media print {
+      header.site, .btn-print { display: none !important; }
+      body { background: #fff; color: #000; }
+      .card { box-shadow: none; }
+      .headshot-frame { box-shadow: none; }
+      a { color: #000; text-decoration: none; }
+      .wrap { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <nav class="nav">
+      <div class="brand">Curriculum Vitae Continuum</div>
+      <div class="spacer"></div>
+      <button class="btn-print" onclick="window.print()" aria-label="Print or Save as PDF">Print / Save as PDF</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-copy">
+        <h2>Hi, I'm Ryan — I like to build things. From startups to relationships.</h2>
+        <p class="lead">I am an avid enthusiast of tech, venture, philosophy, music, and design. I live and operate in the SF Bay Area with my family who inspire me every day. I like to hike Mt Tam and talk shop with domain experts. <a href="mailto:hello@ryanedwards.bio">Get in touch</a>.</p>
+      </div>
+
+      <div class="hero-headshot">
+        <div class="headshot-frame">
+          <img
+            src="Ryan-Edwards-3.jpg"
+            alt="Headshot of Ryan Edwards"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="background" aria-labelledby="background-h" style="margin-bottom:28px;">
+      <h2 id="background-h">Background</h2>
+      <p>With a hacker mindset since childhood, I have spent nearly 40-years learning how things work by decompiling them. From synthesizers to computers to the internet. I built my first pre-internet BBS in my parents basement during a grey winter in Canada. As the internet hit I ran through all things cyber, from coding to community, infra to ecommerce.</p>
+
+      <p>Fast forward to the last decade and I have spent countless hours working with startups and leading teams of 50+ to bring design-led products and useful technologies into the world. From finance to brand, factory floor to board room, I have developed a unique set of chops to drive technology and innovation forward.</p>
+    </section>
+
+    <section class="card" id="education" aria-labelledby="edu-h" style="margin-bottom:28px;">
+      <h2 id="edu-h">Education & Experience</h2>
+      <p><strong>University of Western Ontario</strong> BA Honors, Anthropology and Linguistics, 2001.</p>
+    </section>
+
+    <section class="timeline" id="work" aria-labelledby="work-h">
+  <h2 id="work-h">Experience</h2>
+
+  <article class="timeline-item">
+    <div class="timeline-marker" aria-hidden="true"></div>
+    <div class="card role timeline-card">
+      <h3>Co-founder, CEO</h3>
+      <div class="meta">Stealth Startup · San Francisco, CA · 2026 – Present</div>
+      <p class="desc"><strong>AI / Cybersecurity.</strong> Startup with an elite team working on an important problem in the device security space.</p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
+    <div class="timeline-marker" aria-hidden="true"></div>
+    <div class="card role timeline-card">
+      <h3>Board Member · Co-founder, President, CEO</h3>
+      <div class="meta">Happier Camper, Inc. · Los Angeles, CA · 2014 – Present</div>
+      <p class="desc"><strong>Mobility / Hardware.</strong> Built towable vehicle manufacturer from ground up with a group of brilliant designers and engineers. Handled executive leadership, fundraising, finance, corporate dev, governance, patents, brand, and strategy.</p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
+    <div class="timeline-marker" aria-hidden="true"></div>
+    <div class="card role timeline-card">
+      <h3>Partner</h3>
+      <div class="meta">Indicate Design Groupe, Inc. · San Francisco, CA · 2012 – Ongoing</div>
+      <p class="desc"><strong>Design / Startup Incubation.</strong> Worked with countless startups to develop their business and market presence. Partnered with one of the top identity designers in the world. (Uber, Expa, Emulate Bio)</p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
+    <div class="timeline-marker" aria-hidden="true"></div>
+    <div class="card role timeline-card">
+      <h3>Managing Partner</h3>
+      <div class="meta">Capture Design Ventures · San Francisco, CA · 2015 – Ongoing</div>
+      <p class="desc"><strong>Venture Investing.</strong> Syndicate management and angel investment in early-stage hardware, software, bio-tech, and consumer companies. Placing educated bets from a design-meets-finance perspective.</p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
+    <div class="timeline-marker" aria-hidden="true"></div>
+    <div class="card role timeline-card">
+      <h3>VP, Product Management</h3>
+      <div class="meta">OCZ Technology, Inc. (Acquired by Toshiba) · Sunnyvale, CA · 2007 – 2011</div>
+      <p class="desc"><strong>Device Manufacturer.</strong> Developed and co-led manufacturing of various device and component lines, including SSD, power management, and cooling.</p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
+    <div class="timeline-marker" aria-hidden="true"></div>
+    <div class="card role timeline-card">
+      <h3>Director, Product Management</h3>
+      <div class="meta">PC Power &amp; Cooling, Inc. · Carlsbad, CA · 2003 – 2007</div>
+      <p class="desc"><strong>Device Manufacturer.</strong> Cut my teeth in the hardware industry with the pioneer in aftermarket computer power supply and cooling devices.</p>
+    </div>
+  </article>
+</section>
+
+    <footer class="wrap">
+      <p>© <span id="year"></span>
+        <a href="https://ryanedwards.bio" target="_blank" rel="noopener">Ryan Edwards</a>.
+        All rights reserved.
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
