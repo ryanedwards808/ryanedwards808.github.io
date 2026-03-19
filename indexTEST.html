@@ -168,6 +168,7 @@
     }
 
     .hero-headshot {
+  margin-top: 4px; /* aligns top edge more cleanly with text */
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -180,16 +181,24 @@
     }
 
     .headshot-frame {
-      width: 100%;
-      max-width: 320px;
-      aspect-ratio: 3 / 4;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: var(--card);
-      box-shadow: var(--shadow);
-    }
+  width: 100%;
+  max-width: 220px;   /* smaller overall */
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+@media (max-width: 600px) {
+  .headshot-frame {
+    max-width: 160px;  /* tighter on mobile */
+  }
 
+  .hero {
+    gap: 20px;         /* reduce vertical space */
+  }
+}
     .headshot-frame img {
       width: 100%;
       height: 100%;
